@@ -40,7 +40,7 @@ const Projects = [
     image: "/projects/safari.jpg",
     tags: ["web", "MongoDB", "Express.js", "React", "Tailwind CSS", "Node.js"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Dilshan-Nadeeranga/SAFARI_GO",
   },
 
   {
@@ -51,8 +51,7 @@ const Projects = [
     image: "/projects/portfolio.png",
     tags: ["web", "React", "Tailwind CSS"],
     demoUrl: "#",
-    githubUrl: "https://github.com/hasinilakshika/Hasini_Portfolio
-",
+    githubUrl: "https://github.com/hasinilakshika/Hasini_Portfolio",
   },
 ];
 
