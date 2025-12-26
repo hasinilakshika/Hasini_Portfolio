@@ -1,21 +1,40 @@
 import { ThemeToggle } from "../components/ThemeToggle";
 import { StarBackground } from "@/components/StarBackground";
+import { Navbar } from "@/components/Navbar";
+import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "../components/AboutSection";
+import { SkillsSection } from "../components/SkillsSection";
+import { ProjectSection } from "@/components/ProjectSection";
+import { EduSection } from "../components/EduSection"; // ✅ Import Journey
+import { ContactSection } from "../components/ContactSection";
+import { Footer } from "../components/Footer";
+
 export const Home = () => {
   return (
-  <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-    {/*Theme Toggle*/}
-    <ThemeToggle/>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      
+      {/* Theme Toggle */}
+      <ThemeToggle />
 
-    {/*Background Effect*/}
-    <StarBackground/>
+      {/* Background Effect */}
+      <StarBackground />
 
-    {/*Navbar*/}
+      {/* Navbar */}
+      <Navbar />
 
-    {/*Main Content*/}
+      {/* Main Content */}
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <EduSection/> 
+        <ProjectSection />
 
-    {/*Footer*/}
+       <ContactSection />
+      </main>
 
-
-</div>
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 };
