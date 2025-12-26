@@ -51,7 +51,8 @@ const Projects = [
     image: "/projects/portfolio.png",
     tags: ["web", "React", "Tailwind CSS"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/hasinilakshika/Hasini_Portfolio
+",
   },
 ];
 
