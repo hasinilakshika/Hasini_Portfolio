@@ -39,7 +39,6 @@ const Projects = [
       "A web-based platform that allows users to browse safari packages, make bookings, and manage reservations online.",
     image: "/projects/safari.jpg",
     tags: ["web", "MongoDB", "Express.js", "React", "Tailwind CSS", "Node.js"],
-    demoUrl: "#",
     githubUrl: "https://github.com/Dilshan-Nadeeranga/SAFARI_GO",
   },
 
@@ -60,7 +59,7 @@ export const ProjectSection = () => {
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          My <span className="text-primary">Projects</span>
+          <span className="text-primary">Projects</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Here are some of the projects I've worked on, showcasing my skills in

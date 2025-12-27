@@ -10,7 +10,7 @@ export const AboutSection = () => {
 </h2>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 <div className="space-y-6">
-    <h3 className="text-2xl font-semibold">Passionate Web Developer & Tech Creator</h3>
+    <h3 className="text-2xl font-semibold">Building Practical & User-Friendly Web Solutions</h3>
 
     <p className="text-muted-foreground">
   As an Information Technology undergraduate at SLIIT, I have worked on multiple academic and personal projects, gaining hands-on experience in web development. I enjoy collaborating in teams to solve problems and bring ideas to life.
@@ -26,7 +26,7 @@ export const AboutSection = () => {
             Get In Touch
 
         </a>
-    <a href="" className="px-6 py-2 rounded-full border-primary text-primary hover:bg-primary/10 transition-colors duration-300"> 
+    <a href="/projects/HasiniCV.pdf" className="px-6 py-2 rounded-full border-primary text-primary hover:bg-primary/10 transition-colors duration-300"> 
             {" "}
             Download CV
  </a>

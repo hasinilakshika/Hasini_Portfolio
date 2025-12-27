@@ -43,30 +43,37 @@ export const ContactSection = () => {
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
 
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card hover:shadow-md transition">
-              <div className="p-3 rounded-full bg-primary/10">
-                <Mail className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-medium">Email</h4>
-                <a
-                  href="mailto:hasinilakshika56@gmail.com"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  hasinilakshika56@gmail.com
-                </a>
-              </div>
-            </div>
+           {/* EMAIL */}
+<div className="flex items-start gap-4 p-5 rounded-xl bg-card hover:shadow-md transition">
+  <div className="p-3 rounded-full bg-primary/10 shrink-0">
+    <Mail className="h-5 w-5 text-primary" />
+  </div>
 
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card hover:shadow-md transition">
-              <div className="p-3 rounded-full bg-primary/10">
-                <MapPin className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-medium">Location</h4>
-                <p className="text-muted-foreground">Yakkala, Sri Lanka</p>
-              </div>
-            </div>
+  <div className="text-left">
+    <h4 className="font-semibold leading-tight">Email</h4>
+    <a
+      href="mailto:hasinilakshika56@gmail.com"
+      className="text-sm text-muted-foreground hover:text-primary transition-colors break-all"
+    >
+      hasinilakshika56@gmail.com
+    </a>
+  </div>
+</div>
+
+{/* LOCATION */}
+<div className="flex items-start gap-4 p-5 rounded-xl bg-card hover:shadow-md transition">
+  <div className="p-3 rounded-full bg-primary/10 shrink-0">
+    <MapPin className="h-5 w-5 text-primary" />
+  </div>
+
+  <div className="text-left">
+    <h4 className="font-semibold leading-tight">Location</h4>
+    <p className="text-sm text-muted-foreground">
+      Yakkala, Sri Lanka
+    </p>
+  </div>
+</div>
+
 
             <div className="pt-4">
               <h4 className="font-medium mb-3">Connect With Me</h4>
