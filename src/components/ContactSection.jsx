@@ -9,22 +9,55 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+    emailjs
+      .send(
+        "service_o4liz9r",   
+        "template_q5tewws",  
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "euAwI6BtrRRN1OXiP"    
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message sent!",
+            description: "Thank you for your message. I'll get back to you soon.",
+          });
+          setFormData({ name: "", email: "", message: "" });
+          setIsSubmitting(false);
+        },
+        () => {
+          toast({
+            title: "Error",
+            description: "Something went wrong. Please try again.",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+        }
+      );
   };
 
   return (
@@ -39,35 +72,31 @@ export const ContactSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* LEFT: Contact Info */}
+          {/* LEFT */}
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
 
-           {/* EMAIL */}
-<div className="flex items-start gap-4 p-5 rounded-xl bg-card hover:shadow-md transition">
-  <div className="p-3 rounded-full bg-primary/10 shrink-0">
+           <div className="flex items-center gap-4 p-5 rounded-xl bg-card">
+  <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
     <Mail className="h-5 w-5 text-primary" />
   </div>
-
   <div className="text-left">
-    <h4 className="font-semibold leading-tight">Email</h4>
+    <h4 className="font-semibold leading-none mb-1">Email</h4>
     <a
       href="mailto:hasinilakshika56@gmail.com"
-      className="text-sm text-muted-foreground hover:text-primary transition-colors break-all"
+      className="text-sm text-muted-foreground hover:text-primary"
     >
       hasinilakshika56@gmail.com
     </a>
   </div>
 </div>
 
-{/* LOCATION */}
-<div className="flex items-start gap-4 p-5 rounded-xl bg-card hover:shadow-md transition">
-  <div className="p-3 rounded-full bg-primary/10 shrink-0">
+           <div className="flex items-center gap-4 p-5 rounded-xl bg-card">
+  <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
     <MapPin className="h-5 w-5 text-primary" />
   </div>
-
   <div className="text-left">
-    <h4 className="font-semibold leading-tight">Location</h4>
+    <h4 className="font-semibold leading-none mb-1">Location</h4>
     <p className="text-sm text-muted-foreground">
       Yakkala, Sri Lanka
     </p>
@@ -75,66 +104,56 @@ export const ContactSection = () => {
 </div>
 
 
-            <div className="pt-4">
+            <div>
               <h4 className="font-medium mb-3">Connect With Me</h4>
               <div className="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/hasinilakshika"
-
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.linkedin.com/in/hasinilakshika" target="_blank">
                   <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary" />
                 </a>
-                <a
-                  href="https://www.instagram.com/_.hasii_?igsh=MW43bzdiN2hvb3ByeQ%3D%3D&utm_source=qr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.instagram.com/_.hasii_" target="_blank">
                   <Instagram className="w-6 h-6 text-muted-foreground hover:text-primary" />
                 </a>
-                <a
-                  href="https://www.facebook.com/share/17XHCqTHsE/?mibextid=wwXIfr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.facebook.com" target="_blank">
                   <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary" />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Contact Form */}
-          <div className="bg-card p-8 rounded-xl shadow-md hover:shadow-lg transition">
+          {/* RIGHT FORM */}
+          <div className="bg-card p-8 rounded-xl shadow-md">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">Your Name</label>
-                <input
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 rounded-md border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md border-input bg-background"
+              />
 
-              <div>
-                <label className="block text-sm font-medium mb-2">Your Email</label>
-                <input
-                  type="email"
-                  required
-                  className="w-full px-4 py-3 rounded-md border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md border-input bg-background"
+              />
 
-              <div>
-                <label className="block text-sm font-medium mb-2">Your Message</label>
-                <textarea
-                  rows={4}
-                  required
-                  className="w-full px-4 py-3 rounded-md border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                />
-              </div>
+              <textarea
+                rows={4}
+                name="message"
+                required
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md border-input bg-background resize-none"
+              />
 
               <button
                 type="submit"

@@ -4,53 +4,51 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = [
   {
     id: 1,
-    title: "Flower Pot",
+    title: "Flora Shop Mobile App",
     description:
       "A clean and elegant Flora Shop mobile app UI featuring smooth transitions, intuitive interactions, and a refreshing floral theme to create a delightful user experience.",
     image: "/projects/flora_app.jpg",
     tags: ["figma", "ui/ux", "mobile app"],
-    demoUrl: "https://www.figma.com/proto/vyWE9TEZpQx7rMnQM0U8K5/Mobile-Application-2nd-Year-Project-UI-Design?page-id=0%3A1&node-id=1-909&p=f&viewport=321%2C176%2C0.21&t=mpNsLbdlCUb28cGy-1&scaling=scale-down&content-scaling=fixed",
+    demoUrl:
+      "https://www.figma.com/proto/vyWE9TEZpQx7rMnQM0U8K5/Mobile-Application-2nd-Year-Project-UI-Design",
   },
-
   {
     id: 2,
     title: "Financial Tracking App",
     description:
-      "A clean financial tracking app UI designed to simplify expense monitoring through clear data visualization, intuitive navigation, and a structured layout.",
+      "A clean financial tracking app UI designed to simplify expense monitoring through clear data visualization.",
     image: "/projects/finance.jpg",
-    tags: ["figma", "ui/ux", "mobile app"],
-   githubUrl: "https://github.com/hasinilakshika/financial_tracking_app",
+    tags: ["figma", "ui/ux", "kotlin", "mobile app"],
+    githubUrl: "https://github.com/hasinilakshika/financial_tracking_app",
   },
-
   {
     id: 3,
     title: "SL Post Website",
     description:
-      "A modern Sri Lanka Post website UI redesign focused on improving usability, clear information hierarchy, and smoother navigation for essential postal services.",
+      "A modern Sri Lanka Post website UI redesign focused on usability and clear navigation.",
     image: "/projects/postal_website.jpg",
     tags: ["figma", "ui/ux", "website"],
-    demoUrl: "https://www.figma.com/proto/0niRvOIyAuQCYIni7uQ0H8/HCI-3rd-Year-Project-UI-Design?page-id=0%3A1&node-id=20-5402&p=f&viewport=304%2C133%2C0.02&t=kOOl6cLJu9UrRPr3-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=20%3A5402",
+    demoUrl:
+      "https://www.figma.com/proto/0niRvOIyAuQCYIni7uQ0H8/HCI-3rd-Year-Project-UI-Design",
   },
-
   {
     id: 4,
     title: "Online Safari Booking Website",
     description:
-      "A web-based platform that allows users to browse safari packages, make bookings, and manage reservations online.",
+      "A web-based platform that allows users to browse safari packages and manage reservations.",
     image: "/projects/safari.jpg",
-    tags: ["web", "MongoDB", "Express.js", "React", "Tailwind CSS", "Node.js"],
+    tags: ["web", "MongoDB", "Express", "React", "Tailwind", "Node"],
     githubUrl: "https://github.com/Dilshan-Nadeeranga/SAFARI_GO",
   },
-
   {
     id: 5,
     title: "Portfolio Website",
     description:
-      "A personal portfolio website showcasing projects, skills, and experience using modern web technologies.",
+      "A personal portfolio website showcasing projects, skills, and experience.",
     image: "/projects/portfolio.png",
-    tags: ["web", "React", "Tailwind CSS"],
-    demoUrl: "#",
+    tags: ["web", "React", "Tailwind"],
     githubUrl: "https://github.com/hasinilakshika/Hasini_Portfolio",
+    demoUrl: "#",
   },
 ];
 
@@ -61,6 +59,7 @@ export const ProjectSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           <span className="text-primary">Projects</span>
         </h2>
+
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Here are some of the projects I've worked on, showcasing my skills in
           UI/UX design and full-stack development.
@@ -70,8 +69,16 @@ export const ProjectSection = () => {
           {Projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="
+                relative group rounded-xl overflow-hidden
+                bg-card border border-transparent
+                transition-all duration-500
+                hover:-translate-y-2
+                hover:border-purple-500/40
+                hover:shadow-[0_0_30px_rgba(168,85,247,0.35)]
+              "
             >
+              {}
               <div className="h-48 overflow-hidden">
                 <img
                   src={project.image}
@@ -80,49 +87,63 @@ export const ProjectSection = () => {
                 />
               </div>
 
+              {}
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/20 text-secondary-foreground"
+                      className="
+                        px-3 py-1 text-xs font-medium rounded-full
+                        bg-purple-500/10 text-purple-400
+                        border border-purple-500/20
+                      "
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {project.title}
+                </h3>
+
                 <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
 
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
-                    )}
+                <div className="flex space-x-4">
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-purple-400 transition"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
 
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                      >
-                        <Github size={20} />
-                      </a>
-                    )}
-                  </div>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-purple-400 transition"
+                    >
+                      <Github size={20} />
+                    </a>
+                  )}
                 </div>
               </div>
+
+              {/* GLOW LAYER */}
+              <div className="
+                pointer-events-none absolute inset-0 rounded-xl
+                opacity-0 group-hover:opacity-100
+                transition duration-500
+                bg-gradient-to-br from-purple-500/10 via-transparent to-transparent
+              " />
             </div>
           ))}
         </div>

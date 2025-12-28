@@ -46,7 +46,7 @@ export const StarBackground = () => {
                 id: i,
                 size: Math.random() * 2 + 1,
                 x: Math.random() * 100,
-                y: Math.random() * 20, // only appear in top area
+                y: Math.random() * 20, 
                 delay: Math.random() * 5 + "s",
                 animationDuration: Math.random() * 3 + 3 + "s",
             });
