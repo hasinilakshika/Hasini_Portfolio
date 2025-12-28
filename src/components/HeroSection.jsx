@@ -37,7 +37,7 @@ export const HeroSection = () => {
           <div className="flex justify-center md:justify-end">
             <div className="relative w-56 h-56 md:w-78 md:h-80 rounded-full border-4 border-primary overflow-hidden shadow-lg">
               <img
-                src="/projects/hasini.png"   
+                src={`${import.meta.env.BASE_URL}projects/hasini.png`}   
                 alt="Hasini Lakshika Rajapaksha"
                 className="w-full h-full object-cover"
               />

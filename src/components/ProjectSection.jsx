@@ -7,7 +7,7 @@ const Projects = [
     title: "Flora Shop Mobile App",
     description:
       "A clean and elegant Flora Shop mobile app UI featuring smooth transitions, intuitive interactions, and a refreshing floral theme to create a delightful user experience.",
-    image: "/projects/flora_app.jpg",
+    image: `${import.meta.env.BASE_URL}projects/flora_app.jpg`,
     tags: ["figma", "ui/ux", "mobile app"],
     demoUrl:
       "https://www.figma.com/proto/vyWE9TEZpQx7rMnQM0U8K5/Mobile-Application-2nd-Year-Project-UI-Design",
@@ -17,7 +17,7 @@ const Projects = [
     title: "Financial Tracking App",
     description:
       "A clean financial tracking app UI designed to simplify expense monitoring through clear data visualization.",
-    image: "/projects/finance.jpg",
+    image: `${import.meta.env.BASE_URL}projects/finance.jpg`,
     tags: ["figma", "ui/ux", "kotlin", "mobile app"],
     githubUrl: "https://github.com/hasinilakshika/financial_tracking_app",
   },
@@ -26,7 +26,7 @@ const Projects = [
     title: "SL Post Website",
     description:
       "A modern Sri Lanka Post website UI redesign focused on usability and clear navigation.",
-    image: "/projects/postal_website.jpg",
+    image: `${import.meta.env.BASE_URL}projects/postal_website.jpg`,
     tags: ["figma", "ui/ux", "website"],
     demoUrl:
       "https://www.figma.com/proto/0niRvOIyAuQCYIni7uQ0H8/HCI-3rd-Year-Project-UI-Design",
@@ -36,7 +36,7 @@ const Projects = [
     title: "Online Safari Booking Website",
     description:
       "A web-based platform that allows users to browse safari packages and manage reservations.",
-    image: "/projects/safari.jpg",
+    image: `${import.meta.env.BASE_URL}projects/safari.jpg`,
     tags: ["web", "MongoDB", "Express", "React", "Tailwind", "Node"],
     githubUrl: "https://github.com/Dilshan-Nadeeranga/SAFARI_GO",
   },
@@ -45,7 +45,7 @@ const Projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio website showcasing projects, skills, and experience.",
-    image: "/projects/portfolio.png",
+    image: `${import.meta.env.BASE_URL}projects/portfolio.png`,
     tags: ["web", "React", "Tailwind"],
     githubUrl: "https://github.com/hasinilakshika/Hasini_Portfolio",
     demoUrl: "#",

@@ -3,23 +3,23 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // Frontend
-  { name: "HTML / CSS", logo: "/logos/HTML.jpg", category: "frontend" },
-  { name: "JavaScript", logo: "/logos/js.jpg", category: "frontend" },
-  { name: "React", logo: "/logos/React.jpg", category: "frontend" },
-  { name: "Tailwind CSS", logo: "/logos/Tailwind_CSS.jpg", category: "frontend" },
+  { name: "HTML / CSS", logo: `${import.meta.env.BASE_URL}logos/HTML.jpg`, category: "frontend" },
+  { name: "JavaScript", logo: `${import.meta.env.BASE_URL}logos/js.jpg`, category: "frontend" },
+  { name: "React", logo: `${import.meta.env.BASE_URL}logos/React.jpg`, category: "frontend" },
+  { name: "Tailwind CSS", logo: `${import.meta.env.BASE_URL}logos/Tailwind_CSS.jpg`, category: "frontend" },
 
   // Backend
-  { name: "Node.js", logo: "/logos/node.jpg", category: "backend" },
-  { name: "Express.js", logo: "/logos/express_js.jpg", category: "backend" },
-  { name: "MongoDB", logo: "/logos/mongo_db.jpg", category: "backend" },
-  { name: "SQL", logo: "/logos/my_sql.jpg", category: "backend" },
+  { name: "Node.js", logo: `${import.meta.env.BASE_URL}logos/node.jpg`, category: "backend" },
+  { name: "Express.js", logo: `${import.meta.env.BASE_URL}logos/express_js.jpg`, category: "backend" },
+  { name: "MongoDB", logo: `${import.meta.env.BASE_URL}logos/mongo_db.jpg`, category: "backend" },
+  { name: "SQL", logo: `${import.meta.env.BASE_URL}logos/my_sql.jpg`, category: "backend" },
 
   // Tools
-  { name: "Git", logo: "/logos/git_hub.jpg", category: "tools" },
-  { name: "Figma", logo: "/logos/Figma.jpg", category: "tools" },
-  { name: "VS Code", logo: "/logos/vscode.jpg", category: "tools" },
-  { name: "Android Studio", logo: "/logos/android_studio.jpg", category: "tools" },
-  { name: "Power BI", logo: "/logos/power_bi.jpg", category: "tools" },
+  { name: "Git", logo: `${import.meta.env.BASE_URL}logos/git_hub.jpg`, category: "tools" },
+  { name: "Figma", logo: `${import.meta.env.BASE_URL}logos/Figma.jpg`, category: "tools" },
+  { name: "VS Code", logo: `${import.meta.env.BASE_URL}logos/vscode.jpg`, category: "tools" },
+  { name: "Android Studio", logo: `${import.meta.env.BASE_URL}logos/android_studio.jpg`, category: "tools" },
+  { name: "Power BI", logo: `${import.meta.env.BASE_URL}logos/power_bi.jpg`, category: "tools" },
 ];
 
 const categories = ["all", "frontend", "backend", "tools"];
