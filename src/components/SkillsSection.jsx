@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // Frontend
-  { name: "HTML / CSS", logo: `${import.meta.env.BASE_URL}logos/HTML.jpg`, category: "frontend" },
+  { name: "HTML / CSS", logo: `${import.meta.env.BASE_URL}/logos/HTML.jpg`, category: "frontend" },
   { name: "JavaScript", logo: `${import.meta.env.BASE_URL}logos/js.jpg`, category: "frontend" },
   { name: "React", logo: `${import.meta.env.BASE_URL}logos/React.jpg`, category: "frontend" },
   { name: "Tailwind CSS", logo: `${import.meta.env.BASE_URL}logos/Tailwind_CSS.jpg`, category: "frontend" },
