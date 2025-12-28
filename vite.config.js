@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
-  base: "/Hasini_Portfoli",
+  base: "/Hasini_Portfolio/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
