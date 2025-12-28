@@ -22,43 +22,43 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Scrollspy (highlights active item while scrolling)
+  // ✅ Scrollspy (accurate + starts on Home)
   useEffect(() => {
     const ids = navItems.map((i) => i.href.replace("#", ""));
 
+    const getTop = (el) => el.getBoundingClientRect().top + window.scrollY;
+
     const onScroll = () => {
-      const offset = 140; // adjust based on your navbar height (120-180 works)
+      // If you're basically at the top, always highlight Home
+      if (window.scrollY < 50) {
+        setActiveId("hero");
+        return;
+      }
+
+      const offset = 160; // adjust if needed
       const scrollPos = window.scrollY + offset;
 
-      let current = ids[0];
+      let current = "hero";
 
       for (const id of ids) {
         const el = document.getElementById(id);
         if (!el) continue;
 
-        if (el.offsetTop <= scrollPos) {
-          current = id;
-        }
+        const top = getTop(el);
+        if (top <= scrollPos) current = id;
       }
 
-      setActiveId(current);
+      setActiveId((prev) => (prev === current ? prev : current));
     };
 
-    // run once at start
+    // run once after mount
     onScroll();
 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // ✅ Set active based on URL hash on first load (optional)
-  useEffect(() => {
-    const hash = window.location.hash?.replace("#", "");
-    if (hash) setActiveId(hash);
   }, []);
 
   const linkClass = (id) =>
